@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
     width: 100%;
     height: var(--default-layout-header-height, 60px);
     box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
@@ -7,7 +7,110 @@
     align-items: center;
 }
 
-.content-header{
+.content-header {
     height: 100%;
     width: var(--default-layout-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--default-layout-horizontal-space);
+}
+
+.search,
+.search-result {
+    width: 361px;
+}
+
+.search-result {
+    .search-title {
+        padding: 5px 12px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: rgba(22, 24, 35, 0.6);
+    }
+}
+
+.search {
+    height: 46px;
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: 100rem;
+    padding-left: 16px;
+    display: flex;
+    border: 1px solid transparent;
+    position: relative;
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+
+    input {
+        flex: 1;
+        color: var(--black);
+        font-size: 1.4rem;
+        background-color: transparent;
+        height: 100%;
+        caret-color: var(--primary);
+        &:not(:placeholder-shown) ~ .search-btn {
+            color: rgba(22, 24, 35, 0.75);
+        }
+    }
+
+    .clear,
+    .loading {
+        position: absolute;
+        right: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(22, 24, 35, 0.34);
+        cursor: pointer;
+    }
+
+    .search-btn {
+        width: 52px;
+        height: 100%;
+        background-color: transparent;
+        border-top-right-radius: 100rem;
+        border-bottom-right-radius: 100rem;
+        font-size: 1.5rem;
+        color: rgba(22, 24, 35, 0.34);
+        cursor: pointer;
+        position: relative;
+        &:hover {
+            background-color: rgba(22, 24, 35, 0.03);
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 28px;
+            background-color: rgba(22, 24, 35, 0.14);
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+
+    .action-btn {
+        color: #161823;
+        font-size: 2.2rem;
+        padding: 4px 16px;
+    }
+
+    .user-avatar {
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .more-btn {
+        font-size: 2rem;
+        margin-left: 24px;
+        padding: 8px;
+    }
 }

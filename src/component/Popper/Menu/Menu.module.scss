@@ -1,0 +1,30 @@
+.header {
+    position: relative;
+    height: 50px;
+    .back-btn {
+        width: 50px;
+        height: 100%;
+    }
+    .header-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.menu-list {
+    width: 224px;
+}
+
+.menu-item {
+    padding: 9px 16px;
+    width: 100% !important;
+    font-weight: 500;
+    font-size: 1.6rem;
+    text-align: left;
+    color: var(--text-color);
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
